@@ -54,3 +54,46 @@ export const QUERY_USER = gql`
         }
     }
 `;
+//no query needed because no variables are passed
+export const QUERY_ME = gql`
+{
+    me{
+        _id
+        username
+        email
+        friendCount
+        thoughts {
+            _id
+            thoughtText
+            createdAt
+            reactionCount
+            reactions{
+                _id
+                createdAt
+                reactionBody
+                username
+            }
+        }
+        friends {
+            _id
+            username
+        }
+    }
+}
+`;
+//set up query to return less data for loggedin user
+//advantage of GQL = no additional route needed as REST APIs would need
+export const QUERY_ME_BASIC = gql`
+{
+    me{
+        _id
+        username
+        email
+        friendCount
+        friends {
+            _id
+            username
+        }
+    }
+}
+`;
