@@ -5,7 +5,8 @@ import ThoughtList from '../components/ThoughtList';
 import FriendList from '../components/FriendList';
 
 import { useQuery, useMutation } from '@apollo/client';
-import { QUERY_USER, QUERY_ME, ADD_FRIEND } from '../utils/queries';
+import { QUERY_USER, QUERY_ME } from '../utils/queries';
+import {ADD_FRIEND} from '../utils/mutations';
 import Auth from '../utils/auth';
 import ThoughtForm from '../components/ThoughtForm';
 
