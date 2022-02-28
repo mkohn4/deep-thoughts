@@ -24,7 +24,11 @@ const ThoughtForm = () => {
             } catch(e) {
                 console.error(e);
             }
-            
+            //update me objects cache
+            if (!cache.readQuery({query: QUERY_ME})) {
+                return;
+            }
+
             //update me object's cache, appending new thought tot he end of the array
             const {me} = cache.readQuery({query: QUERY_ME});
             cache.writeQuery({
